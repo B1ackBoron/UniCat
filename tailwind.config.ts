@@ -7,9 +7,12 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     colors: {
-      bgColor: "#292929",
+      bgDarkColor: "#292929",
+      bgLightColor: "#EEE0D4",
+      textLightMode: "#2A2A2A",
       white: "#FFF",
     },
     fontFamily: {

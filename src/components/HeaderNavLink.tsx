@@ -7,15 +7,16 @@ import { ReactNode } from "react";
 type Props = {
   children: ReactNode;
   href: string;
+  className: string;
 };
 
-const HeaderNavLink = ({ children, href }: Props) => {
+const HeaderNavLink = ({ children, href, className }: Props) => {
   const pathname = usePathname();
   const active = href === pathname;
   return (
     <Link
       href={href}
-      className={`hover: text-[white] ${
+      className={`${className} ${
         active ? "text-[white] font-semibold" : "text-gray-500"
       }`}
     >

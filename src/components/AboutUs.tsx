@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
 
 type Props = {};
 
@@ -12,17 +11,21 @@ const AboutUs = (props: Props) => {
     { label: `FAQ`, url: `/about-us/faq` },
   ];
   const pathname = usePathname();
-  return aboutUsItems.map(({ url, label }, index) => (
-    <Link key={index} href={url}>
-      <a
-        className={`hover:text-white ${
-          url === pathname ? "text-white font-semibold" : "text-gray-500"
-        }`}
-      >
-        {label}
-      </a>
-    </Link>
-  ));
+  return (
+    <div className="absolute top-[98px]">
+      {aboutUsItems.map(({ url, label }, index) => (
+        <Link
+          key={index}
+          href={url}
+          className={`hover:text-white ${
+            url === pathname ? "text-white font-semibold" : "text-gray-500"
+          }`}
+        >
+          {label}
+        </Link>
+      ))}
+    </div>
+  );
 };
 
 export default AboutUs;
