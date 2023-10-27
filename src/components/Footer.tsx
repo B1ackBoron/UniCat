@@ -22,18 +22,26 @@ const Footer = (props: Props) => {
               <label className="text-secondary1800 dark:text-secondary1500 text-center font-zilla text-lg not-italic font-bold ">
                 Subscribe
               </label>
-              <input
-                type="text"
-                value={email}
-                onChange={handleEditEmail}
-                placeholder="E-mail"
-              />
-              <button type="submit">{arrowRight}</button>
+              <div className="flex flex-row">
+                <input
+                  type="text"
+                  value={email}
+                  onChange={handleEditEmail}
+                  placeholder="E-mail"
+                  className="flex w-[243px] p-[10px] items-start gap-[10px] placeholder:text-monochrome400 placeholder:dark:text-monochrome100 text-monochrome400 dark:text-monochrome100 placeholder:font-zilla font-zilla placeholder:text-sm text-sm placeholder:not-italic not-italic placeholder:font-normal font-semibold bg-primaryLightMode dark:bg-monochrome400 placeholder:opacity-70"
+                />
+                <button
+                  className="flex w-[47px] h-10 px-[13px] py-5 items-center justify-center text-secondary1100 dark:text-secondary1200 gap-[10px] bg-secondary1600 dark:bg-monochrome600"
+                  type="submit"
+                >
+                  {arrowRight}
+                </button>
+              </div>
             </form>
           </div>
           <div className=""></div>
         </div>
-        <span className="w-full h-[1px] bg-secondary800 dark:bg-secondary400"></span>
+        <span className="w-full h-[1px] bg-secondary800 dark:bg-monochrome400"></span>
       </div>
     </footer>
   );
