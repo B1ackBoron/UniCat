@@ -8,9 +8,13 @@ import HeaderNavLink from "./HeaderNavLink";
 
 type Props = {};
 const Header = (props: Props) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const handleClick = () => {
-    setIsClicked((prevState) => !prevState);
+  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
+  const openAboutUs = () => {
+    setIsAboutUsOpen(true);
+  };
+
+  const closeAboutUs = () => {
+    setIsAboutUsOpen(false);
   };
 
   const [mounted, setMounted] = useState(false);
@@ -48,7 +52,7 @@ const Header = (props: Props) => {
               <li className="text-textLightMode dark:text-[white] uppercase text-center font-zilla text-base not-italic font-normal">
                 <button
                   className="uppercase flex flex-row"
-                  onClick={handleClick}
+                  onMouseEnter={openAboutUs}
                 >
                   About Us
                   <span className="w-6 h-6 pl-[2px]">{dropDownIcon}</span>
@@ -107,7 +111,11 @@ const Header = (props: Props) => {
           </div>
         </nav>
       </header>
-      {isClicked ? <AboutUs /> : null}
+      {isAboutUsOpen && (
+        <div onMouseLeave={closeAboutUs}>
+          <AboutUs />
+        </div>
+      )}
     </>
   );
 };

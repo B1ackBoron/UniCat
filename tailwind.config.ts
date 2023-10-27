@@ -14,6 +14,9 @@ const config: Config = {
       bgLightColor: "#EEE0D4",
       textLightMode: "#2A2A2A",
       white: "#FFF",
+      secondary1100: "#F9F5F1",
+      secondary1200: "#F3EBE2",
+      secondary1400: "#E8D6C5",
     },
     fontFamily: {
       ubuntu: ["Ubuntu"],
