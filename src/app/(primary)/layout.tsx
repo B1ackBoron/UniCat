@@ -9,14 +9,12 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="flex-grow">
-        <Providers>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </Providers>
-      </div>
+    <div className="flex flex-col min-h-screen m-0">
+      <Providers>
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </Providers>
     </div>
   );
 };
